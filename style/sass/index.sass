@@ -1,0 +1,510 @@
+@use 'variables'
+@use 'mixins'
+
+@font-face
+    font-family: Montserrat
+    src: url('../../fonts/Montserrat-Black.ttf'), url('../../fonts/Montserrat-Medium.ttf'), url('../../fonts/Montserrat-Regular.ttf')
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    color: variables.$secondery
+
+*::-webkit-scrollbar
+    width: 12px
+
+::-webkit-scrollbar-track
+    background: variables.$secondery
+
+*::-webkit-scrollbar-thumb
+    background-color: variables.$primary
+    border-radius: 10px
+    border: 1px solid variables.$secondery
+
+html
+    background-color: #f7f7f7 !important
+
+.container-1420
+    max-width: 1420px
+    width: 100%
+    margin: 0 auto
+
+.sticky
+    position: sticky
+    transition: .8s
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+header
+    top: 0
+    z-index: 200
+    background-color: #f7f7f7
+    transition: .8s
+
+
+    .menu
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+
+        img
+            width: 80px
+            height: 30px
+
+        ul
+            display: flex
+            list-style: none
+            gap: 40px
+            margin: 0
+            padding: 0
+
+            li
+                text-transform: uppercase
+                font-family: Montserrat
+                font-weight: 600
+                transition: .5s
+
+                &:hover
+                    color: white
+                    cursor: pointer
+
+.thumb
+    overflow-x: hidden
+    height: 90vh
+    margin: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    max-height: 1000px
+
+    .parallax-text
+        position: absolute
+        font-family: Montserrat
+        font-size: 342px
+        font-style: italic
+
+        &::after
+            content: attr(text)
+            position: absolute
+            z-index: 100
+            top: 0
+            left: 0
+            color: transparent
+            -webkit-text-stroke: 0.15vw variables.$secondery
+
+    img
+        max-width: 770px
+        width: 100%
+        animation: sneakerAnimation 2s cubic-bezier(0.25, 1, 0.5, 1) forwards
+
+.session-title
+    font-size: 3rem
+    font-weight: 700
+    font-family: 'Poppins'
+    text-transform: capitalize
+
+.carousel-shoes
+    @extend .container-1420
+    padding: 30px 0
+
+    .uk-panel
+        background-color: variables.$primary
+        border-radius: 15px
+
+        .colors-shoe
+            position: absolute
+            top: 22px
+            right: 20px
+            display: flex
+            gap: 10px
+
+            .color
+                width: 40px
+                height: 40px
+                background: red
+                border-radius: 50px
+                border: 1px solid white
+
+            .c1
+                background: #F59E0B
+            .c2
+                background: #000000
+            .c3
+                background: #3B82F6
+            .c4
+                background: #F43F5E
+
+        .logo
+            width: 60px
+            float: right
+            margin: 16px 16px 0 0
+
+        .add-to-cart
+            position: absolute
+            bottom: 0
+            right: 20px
+            bottom: 40px
+            height: 50px
+            width: 50px
+            background: white
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 15px
+
+        .info
+            position: relative
+            border-radius: 15px
+            background-color: variables.$secondery
+            padding: 20px
+
+            .title
+                font-size: 2rem
+                color: white
+                margin: 0
+                font-weight: 600
+
+            .describe
+                color: variables.$primary
+                font-weight: 700
+                font-size: 1.5rem
+                margin: 0
+
+.custom-new
+    padding: 0 0 80px 0
+    background-color: variables.$secondery
+
+    .big-card
+        @extend .container-1420
+        margin: 0 auto
+        width: 100%
+        background-image: linear-gradient(to right, #35e4ee, #27edd5, #5df4af, #97f582, #d2f254)
+        border-radius: 15px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: 1fr
+        grid-column-gap: 0px
+        grid-row-gap: 0px
+        margin-top: 120px
+        margin-bottom: 120px
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+        #img-tilt
+            rotate: 25deg
+            filter: drop-shadow(5px 5px 5px #222)
+
+        .describe
+            padding: 40px
+            display: flex
+            align-content: center
+            justify-content: center
+            flex-direction: column
+
+            p
+                font-size: 20px
+                font-family: 'Poppins'
+
+            button
+                position: relative
+                font-size: 20px
+                letter-spacing: 3px
+                height: 3em
+                padding: 0 3em
+                border: none
+                color: #fff
+                text-transform: capitalize
+                overflow: hidden
+                border-radius: 5px
+                border: 2px solid black
+                background-color: black
+                width: 300px
+                cursor: pointer
+                margin-top: 20px
+                font-family: 'Poppins'
+
+                &::before
+                    content: ''
+                    display: block
+                    position: absolute
+                    z-index: 0
+                    bottom: 0
+                    left: 0
+                    height: 0px
+                    width: 100%
+                    transition: 0.2s
+
+                .label
+                    position: relative
+                    color: #fff
+
+                .icon
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    height: 3em
+                    width: 3em
+                    position: absolute
+                    top: 3em
+                    right: 0
+                    opacity: 0
+                    transition: 0.4s
+
+                &:hover
+                    &::before
+                        height: 100%
+
+                &:hover
+                    .icon
+                        top: 0
+                        opacity: 1
+
+.double-shoes
+    background-color: #fff
+
+    .big-card
+        @extend .container-1420
+        margin: 0 auto
+        width: 100%
+        border-radius: 15px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: 1fr
+        grid-column-gap: 0px
+        grid-row-gap: 0px
+
+        .describe
+            padding: 40px
+            display: flex
+            align-content: center
+            justify-content: center
+            flex-direction: column
+
+            p
+                font-size: 20px
+                font-family: 'Poppins'
+
+            button
+                position: relative
+                font-size: 20px
+                letter-spacing: 3px
+                height: 3em
+                padding: 0 3em
+                border: none
+                color: #fff
+                text-transform: capitalize
+                overflow: hidden
+                border-radius: 5px
+                border: 2px solid black
+                background-color: black
+                width: 300px
+                cursor: pointer
+                margin-top: 20px
+                font-family: 'Poppins'
+
+                &::before
+                    content: ''
+                    display: block
+                    position: absolute
+                    z-index: 0
+                    bottom: 0
+                    left: 0
+                    height: 0px
+                    width: 100%
+                    transition: 0.2s
+
+                .label
+                    position: relative
+                    color: #fff
+
+                .icon
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    height: 3em
+                    width: 3em
+                    position: absolute
+                    top: 3em
+                    right: 0
+                    opacity: 0
+                    transition: 0.4s
+
+                &:hover
+                    &::before
+                        height: 100%
+
+                &:hover
+                    .icon
+                        top: 0
+                        opacity: 1
+
+.frequently-asked-questions
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 100%
+    background-image: url('../../img/bg-animated.svg')
+
+.questions
+    @extend .container-1420
+    //clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem),0 100%)
+
+    ul
+        padding-top: 40px
+
+    li
+        background-color: #f7f7f7
+        border: 1px solid black
+        padding: 15px
+        border-radius: 12px
+
+        *
+            font-family: 'Poppins'
+            color: black
+            font-weight: 500
+
+        a
+            font-size: 32px
+
+footer
+    margin-top: 150px
+    background: black
+    height: 300px
+    width: 100%
+
+.footer-distributed
+    background: rgb(0, 0, 0)
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12)
+    box-sizing: border-box
+    width: 100%
+    text-align: left
+    font: bold 16px sans-serif
+    padding: 55px 50px
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right
+    display: inline-block
+    vertical-align: top
+
+.footer-distributed .footer-left
+    width: 40%
+
+.footer-distributed h3
+    color: #ffffff
+    margin: 0
+    font-size: 36px
+    font-family: 'Poppins'
+
+    & span
+        color: variables.$primary
+
+.footer-distributed .footer-links
+    color: #ffffff
+    margin: 20px 0 12px
+    padding: 0
+
+    & a
+        display: inline-block
+        line-height: 1.8
+        font-weight: 400
+        text-decoration: none
+        color: inherit
+
+.footer-distributed .footer-company-name
+    color: #222
+    font-size: 14px
+    margin: 0
+    font-family: 'Poppins'
+
+/* Footer Center */
+
+.footer-distributed .footer-center
+    width: 35%
+
+    & i
+        background-color: #33383b
+        color: #ffffff
+        font-size: 25px
+        width: 38px
+        height: 38px
+        border-radius: 50%
+        text-align: center
+        line-height: 42px
+        margin: 10px 15px
+        vertical-align: middle
+
+    & i.fa-envelope
+        font-size: 17px
+        line-height: 38px
+
+    & p
+        display: inline-block
+        color: #ffffff
+        font-weight: 400
+        vertical-align: middle
+        margin: 0
+
+    & p span
+        display: block
+        font-weight: normal
+        font-size: 14px
+        line-height: 2
+
+    & p a
+        color: variables.$primary
+        text-decoration: none
+
+.footer-distributed .footer-links a:before
+    content: "|"
+    font-weight: 300
+    font-size: 20px
+    left: 0
+    color: #fff
+    display: inline-block
+    padding-right: 5px
+
+.footer-distributed .footer-links .link-1:before
+    content: none
+
+.footer-distributed .footer-right
+    width: 20%
+
+.footer-distributed .footer-company-about
+    line-height: 20px
+    color: #92999f
+    font-size: 13px
+    font-weight: normal
+    margin: 0
+
+    & span
+        display: block
+        color: #ffffff
+        font-size: 14px
+        font-weight: bold
+        margin-bottom: 20px
+
+.footer-distributed .footer-icons
+    margin-top: 25px
+
+.footer-distributed .footer-icons a
+    display: inline-block
+    width: 35px
+    height: 35px
+    cursor: pointer
+    background-color: #33383b
+    border-radius: 2px
+
+    font-size: 20px
+    color: #ffffff
+    text-align: center
+    line-height: 35px
+
+    margin-right: 3px
+    margin-bottom: 5px
+
+@keyframes sneakerAnimation
+    0%, 10%
+        transform: translate(100vw, 0) rotate(15deg)
+
+    90%, 100%
+        transform: translate(-5vw, -5vw) rotate(-30deg)
