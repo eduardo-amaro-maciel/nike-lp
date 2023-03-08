@@ -1,0 +1,47 @@
+@font-face
+    font-family: Montserrat
+    src: url('../../fonts/Montserrat-Black.ttf'), url('../../fonts/Montserrat-Medium.ttf'), url('../../fonts/Montserrat-Regular.ttf')
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    color: $secondery
+
+*::-webkit-scrollbar
+    width: 12px
+
+::-webkit-scrollbar-track
+    background: $secondery
+
+*::-webkit-scrollbar-thumb
+    background-color: $primary
+    border-radius: 10px
+    border: 1px solid $secondery
+
+html
+    background-color: #f7f7f7 !important
+
+.container-1420
+    max-width: 1420px
+    width: 100%
+    margin: 0 auto
+    padding: 0 10px
+
+.sticky
+    position: sticky
+    transition: .8s
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+.session-title
+    font-size: 3rem
+    font-weight: 700
+    font-family: 'Poppins'
+    text-transform: capitalize
+
+@keyframes sneakerAnimation
+    0%, 10%
+        transform: translate(100vw, 0) rotate(15deg)
+
+    90%, 100%
+        transform: translate(-5vw, -5vw) rotate(-30deg)

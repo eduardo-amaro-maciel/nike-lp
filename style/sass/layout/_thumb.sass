@@ -1,0 +1,34 @@
+.thumb
+    overflow-y: hidden
+    height: 100vh
+    margin: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 700px  
+
+    img
+        max-width: 770px
+        width: 50vw
+        animation: sneakerAnimation 2s cubic-bezier(0.25, 1, 0.5, 1) forwards
+
+    .parallax-text
+        position: absolute
+        font-family: Montserrat
+        font-size: 342px
+        font-style: italic
+
+        &::after
+            content: attr(text)
+            position: absolute
+            z-index: 100
+            top: 0
+            left: 0
+            color: transparent
+            -webkit-text-stroke: 0.15vw $secondery
+        
+@media screen and (max-width: 1120px)
+    
+    .parallax-text
+        font-size: 20vw !important
+    
