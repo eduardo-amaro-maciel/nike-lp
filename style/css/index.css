@@ -56,27 +56,32 @@ html {
   }
 }
 .thumb {
-  overflow-y: hidden;
   height: 100vh;
-  margin: 0;
+  width: 100%;
   display: flex;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
   align-items: center;
   justify-content: center;
-  min-height: 700px;
 }
 .thumb img {
-  max-width: 770px;
-  width: 50vw;
+  width: 750px;
   animation: sneakerAnimation 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 .thumb .parallax-text {
   position: absolute;
   font-family: Montserrat;
-  font-size: 342px;
+  font-size: 350px;
   font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 .thumb .parallax-text::after {
   content: attr(text);
+  margin: 0;
+  padding: 0;
   position: absolute;
   z-index: 100;
   top: 0;
@@ -87,7 +92,18 @@ html {
 
 @media screen and (max-width: 1120px) {
   .parallax-text {
-    font-size: 20vw !important;
+    font-size: 220px !important;
+  }
+  .thumb img {
+    width: 520px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .parallax-text {
+    font-size: 170px !important;
+  }
+  .thumb img {
+    width: 420px;
   }
 }
 header {
@@ -124,6 +140,11 @@ header .menu ul li:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 740px) {
+  header {
+    display: none;
+  }
+}
 .carousel-shoes {
   padding-bottom: 30px;
 }
@@ -195,7 +216,7 @@ header .menu ul li:hover {
 }
 
 .custom-new {
-  padding: 0 0 80px 0;
+  padding: 0 10px 80px 10px;
   background-color: #17171b;
 }
 .custom-new .big-card {
@@ -205,7 +226,7 @@ header .menu ul li:hover {
   border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: min-content minmax(100px, 100%);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   margin-top: 120px;
@@ -280,6 +301,36 @@ header .menu ul li:hover {
   opacity: 1;
 }
 
+@media screen and (max-width: 1020px) {
+  .big-card {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+  }
+  .big-card > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .big-card #img-tilt {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 740px) {
+  .big-card #img-tilt {
+    max-width: 440px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .big-card #img-tilt {
+    max-width: 320px;
+    width: 100%;
+  }
+  .big-card .describe {
+    padding: 0;
+  }
+}
 .double-shoes {
   background-color: #fff;
 }

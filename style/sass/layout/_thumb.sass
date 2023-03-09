@@ -1,25 +1,30 @@
 .thumb
-    overflow-y: hidden
     height: 100vh
-    margin: 0
+    width: 100%
     display: flex
+    padding: 0
+    margin: 0
+    overflow-x: hidden
+    overflow-y: hidden
     align-items: center
     justify-content: center
-    min-height: 700px  
 
     img
-        max-width: 770px
-        width: 50vw
+        width: 750px
         animation: sneakerAnimation 2s cubic-bezier(0.25, 1, 0.5, 1) forwards
 
     .parallax-text
         position: absolute
         font-family: Montserrat
-        font-size: 342px
+        font-size: 350px
         font-style: italic
+        margin: 0
+        padding: 0
 
         &::after
             content: attr(text)
+            margin: 0
+            padding: 0
             position: absolute
             z-index: 100
             top: 0
@@ -30,5 +35,17 @@
 @media screen and (max-width: 1120px)
     
     .parallax-text
-        font-size: 20vw !important
+        font-size: 220px !important
+
+    .thumb
+        img
+            width: 520px
     
+@media screen and (max-width: 740px)
+        
+    .parallax-text
+        font-size: 170px !important
+
+    .thumb
+        img
+            width: 420px
